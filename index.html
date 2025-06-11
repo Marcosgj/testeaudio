@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teste Música</title>
+</head>
+<body>
+  <h1>Teste Música</h1>
+  
+  <audio id="musica" controls>
+    <source src="musica.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <button onclick="document.getElementById('musica').play()">Tocar música</button>
+
+  <script>
+    // Para garantir que play pode ser chamado via botão
+    const audio = document.getElementById('musica');
+    audio.onplay = () => console.log('Música começou a tocar');
+    audio.onerror = (e) => console.log('Erro no áudio', e);
+  </script>
+</body>
+</html>
